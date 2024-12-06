@@ -1,0 +1,24 @@
+{% extends "portfolio_app/base.html" %}
+
+{% block content %}
+<section>
+    <h2>
+        Projects
+    </h2>
+    <div id="projects-list">
+        {% for project in projects %}
+            <div>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <p><strong>Technologies:</strong> {{ project.technologies_used }}</p>
+                <a href="{{ project.github_link }}" target="_blank">GitHub Link</a>
+                {% if project.live_demo_link %}
+                    <a href="{{ project.live_demo_link }}" target="_blank">Live Demo</a>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No projects available</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

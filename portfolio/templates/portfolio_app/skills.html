@@ -1,0 +1,31 @@
+{% extends 'portfolio_app/base.html' %} {% block content %}
+<section class="skills">
+  {% load static %}
+  <div class="container">
+    <div class="left">
+      <div class="photo">
+        <img src="{% static 'images/skills.png' %}" alt="" />
+      </div>
+    </div>
+    <div class="right">
+      <h2>My Skills</h2>
+      <p>I Work to Update My Skills</p>
+      <div class="skills-container">
+        {% for skill in skills %}
+        <div class="skill-card">
+          <div class="skill-header">
+            <span>{{ skill.name }}:</span>
+            <p class="skill-description">{{ skill.description }}</p>
+            <div class="progress-bar">
+              <!-- <div class="progress" style="width: {{ skill.proficiency }}%"></div> -->
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <p>No skills listed.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

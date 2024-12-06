@@ -1,0 +1,19 @@
+{% extends "portfolio_app/base.html" %}
+
+{% block content %}
+<section>
+    <h2>
+        Education
+    </h2>
+    <div id="education-list">
+        {% for education in educations %}
+            <div>
+                <h3>{{ education.degree }} in {{ education.field_of_study }}</h3>
+                <p>{{ education.institution }} [ {{education.start_date}} - {{education.end_date}} ]</p>
+            </div>
+        {% empty %}
+            <p>No education available</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

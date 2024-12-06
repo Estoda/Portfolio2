@@ -1,0 +1,23 @@
+{% extends "portfolio_app/base.html" %}
+
+{% block content %}
+<section>
+    <h2>
+        Certifications
+    </h2>
+    <div id="projects-list">
+        {% for certification in certifications %}
+            <div>
+                <h3>{{ certification.name }}</h3>
+                <div>{{ certification.institution }}</div>
+                <p>{{ certification.description }}</p>
+                {% if certification_link %}
+                <a href="{{ project.github_link }}" target="_blank">Certification Link</a>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No certifications available</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

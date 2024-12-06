@@ -1,0 +1,16 @@
+{% extends "portfolio_app/base.html" %}
+{% block content %}
+<section>
+    <h2>
+        Contact Me
+    </h2>
+    <form method="post" id="contactForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea> -->
+        <button type="submit">Send</button>
+    </form>
+</section>
+{% endblock %}
