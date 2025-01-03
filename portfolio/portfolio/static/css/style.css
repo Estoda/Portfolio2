@@ -126,7 +126,23 @@ main {
   }
 }
 
-main .about {
+/* main section {
+  /* width: fit-content; */
+/* padding: 50px; */
+/* background-color: white; */
+/* -webkit-box-shadow: 0 0 10px #ddd; */
+/* -moz-box-shadow: 0 0 10px #ddd; */
+/* box-shadow: 0 0 10px #ddd; */
+/* border-radius: 6px; */
+/* display: flex; */
+/* color: #191919; */
+/* flex-direction: column; */
+/* text-align: center; */
+/* justify-content: center; */
+/* align-items: center; */
+/* position: relative; */
+
+main>section {
   /* height: 100vh; */
   margin-bottom: 50px;
   display: flex;
@@ -135,7 +151,7 @@ main .about {
   justify-content: center;
 }
 
-main .about .container {
+main>section .container {
   padding: 10px;
   display: flex;
   width: 100%;
@@ -144,21 +160,27 @@ main .about .container {
   gap: 20px;
 }
 
-@media (max-width:1000px) {
-  main .about .container {
-    flex-direction: column;
-  }
-}
 
-main .about .container .left {
+main>section .container .dir {
   width: fit-content;
   align-items: center;
   text-align: start;
   font-weight: bold;
   height: 100%;
+  justify-content: center;
 }
 
-main .about .container .left .hello {
+@media (max-width:1000px) {
+  main>section .container {
+    flex-direction: column;
+  }
+
+  main>section .container .dir {
+    width: 100%;
+  }
+}
+
+main>section .container .head {
   background: linear-gradient(90deg, #67ffca, #0059a2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -166,26 +188,45 @@ main .about .container .left .hello {
   margin: 0 0 20px;
 }
 
-main .about .container .left .name {
+
+main>section .container .Bold {
   font-size: 70px;
   margin: 0 0 10px;
 }
 
-main .about .container .left .info {
+@media(max-width:700px) {
+  main>section .container .Bold {
+    font-size: 50px;
+  }
+
+}
+
+main>section .container .dir {
+  padding: 10px;
+}
+
+main>section .container .skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main>section .container .left .info {
   font-weight: 500;
   font-size: 20px;
   margin: 0 0 5px;
   color: #a2a2a2;
 }
 
-main .about .container .left .city {
+main>section .container .left .city {
   color: #a2a2a2;
   font-weight: 500;
   font-size: 20px;
   margin: 0 0 40px;
 }
 
-main .about .container .left a {
+main>section .container .left a {
   background: linear-gradient(90deg, #67ffca, #0059a2);
   background-size: 200% 200%;
   background-position: 0% 50%;
@@ -198,16 +239,16 @@ main .about .container .left a {
   transition: background-position 0.3s ease;
 }
 
-main .about .container .left a:hover {
+main>section .container .left a:hover {
   background-position: 100% 50%;
 }
 
-main .about .container .right .photo {
+main>section .container .dir .photo {
   position: relative;
   width: 100%;
 }
 
-main .about .container .right .photo::before {
+main>section .container .dir .photo::before {
   content: "";
   position: absolute;
   background: linear-gradient(90deg, #67ffca, #0059a2);
@@ -235,13 +276,19 @@ main .about .container .right .photo::before {
   }
 }
 
-main .about .container .right .photo img {
+main>section .container .dir .photo img {
   position: relative;
   z-index: 2;
   border-radius: 50%;
   width: 100%;
 }
 
+
+main .skills .container .dir .photo img {
+  transform: translate(2%, 13%) rotate(-45deg);
+  border-radius: 0;
+
+}
 
 
 

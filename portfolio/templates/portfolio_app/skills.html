@@ -2,14 +2,14 @@
 <section class="skills">
   {% load static %}
   <div class="container">
-    <div class="left">
+    <div class="dir left">
       <div class="photo">
-        <img src="{% static 'images/skills.png' %}" alt="" />
+        <img src="{% static 'images/skill.png' %}" alt="" />
       </div>
     </div>
-    <div class="right">
-      <h2>My Skills</h2>
-      <p>I Work to Update My Skills</p>
+    <div class="dir right">
+      <h2 class="head">My Skills</h2>
+      <p class="Bold">I Work to Update My Skills</p>
       <div class="skills-container">
         {% for skill in skills %}
         <div class="skill-card">
